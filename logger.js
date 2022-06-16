@@ -1,15 +1,15 @@
-import EventEmitter from "events";
-import { v4 as uuid } from "uuid";
-import fsPromise from "fs/promises";
-import fs from "fs";
-import path from "path";
+const EventEmitter = require("events");
+const { v4: uuid } = require("uuid");
+const fsPromise = require("fs/promises");
+const fs = require("fs");
+const path = require("path");
 
 class myEventEmitter extends EventEmitter {}
 
 const myEmmiter = new myEventEmitter();
 
-export default function eventLogger(action) {
-  myEmmiter.on("timestamp", (data) => {
+function eventLogger(action) {
+  myEmmiter.on("eventTracker", (data) => {
     if (!fs.existsSync(path.resolve("logFolder"))) {
       fsPromise.mkdir("logFolder");
     }
@@ -19,9 +19,11 @@ export default function eventLogger(action) {
     );
   });
 
-  myEmmiter.emit("timestamp", {
+  myEmmiter.emit("eventTracker", {
     id: uuid(),
     time: new Date().toLocaleTimeString(),
     action: action || "-",
   });
 }
+
+module.exports.logger = eventLogger;

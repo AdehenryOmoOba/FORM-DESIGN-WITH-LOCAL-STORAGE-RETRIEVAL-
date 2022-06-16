@@ -1,5 +1,3 @@
-// import eventLogger from "./test";
-
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 ///////////////////////////////////////////////////
@@ -20,15 +18,13 @@ menu.addEventListener("click", () => {
 
   save.classList.toggle("hide");
   retrieve.classList.toggle("hide");
-  // eventLogger("menu clicked");
 });
 save.addEventListener("click", () => {
   localStorage.setItem("formData", JSON.stringify(getFormData()));
-  // eventLogger("New item stored in local storage");
 });
 retrieve.addEventListener("click", () => {
   let storedData = JSON.parse(localStorage.getItem("formData"));
-  console.log(storedData);
+  if (!storedData) return;
 
   email.value = storedData.email;
   comment.value = storedData.comment;
@@ -43,7 +39,7 @@ retrieve.addEventListener("click", () => {
     if (radioOption[i].value === storedData.language)
       radioOption[i].checked = true;
   }
-  // eventLogger("Retrieved data from local storage");
+  logger(`Fetched data from local storage`);
 });
 
 function getFormData(event) {
@@ -66,7 +62,6 @@ function getFormData(event) {
     language: language,
   };
 
-  // eventLogger("New form data submited");
   return formData;
 }
 
