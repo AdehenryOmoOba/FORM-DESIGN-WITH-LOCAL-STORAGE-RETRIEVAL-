@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Adehenry: Form Designs</title>
+</head>
+<body class="flex-column">
+    <form class="flex-column shadow" id="form">
+        <div class="heading">
+            <h1>Login</h1>
+        </div>
+        
+        <div class="content">
+            <div class="form-control flex-column-start">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control-input"/>
+                <!-- <small>this field is required!</small> -->
+            </div>
+            <div class="form-control flex-column-start">
+                <label for="comment" id="textarea-label">Comment</label>
+                <textarea name="comment" id="comment" class="form-control-input" ></textarea>
+                <!-- <small>this field is required!</small> -->
+              </div>
+              <div class="form-control flex-column-start">
+              <label for="country">Country</label>
+              <select id="country" name="country"  class="form-control-input">
+                  <option value="">Pick prefered location</option>
+                  <option value="nigeria">Nigeria</option>
+                  <option value="uk">United Kingdom</option>
+                  <option value="canada">Canada</option>
+              </select>
+              <!-- <small>this field is required!</small> -->
+              </div>
+              <div class="hobbies flex-column-start">
+                  <label class="hobbies-label">Hobbies</label>
+                <div id="flex-label">
+                    <input type="checkbox" id="coding" value="coding" name="coding"  />
+                    <label for="coding" class="hobbies-option-label">Coding</label>
+                </div>
+                     
+                  <div id="flex-label">
+                      <input type="checkbox" id="football" value="football" name="football" />
+                      <label for="football" class="hobbies-option-label">Football</label>
+                  </div>
+                     
+                  <div id="flex-label">
+                      <input type="checkbox" id="traveling" value="traveling" name="traveling" />
+                      <label for="traveling" class="hobbies-option-label">Traveling</label>
+                  </div>
+                  <!-- <small>this field is required!</small> -->
+              </div>
+              <div class="date flex-column-start">
+                  <label for="date" class="date-label">Date of Birth</label>
+                   <input type="date" id="date-input" placeholder="Date">
+                   <!-- <small>this field is required!</small> -->
+              </div>
+              <div class="language flex-column-start">
+                <label class="language-label">Language</label>
+              <div id="flex-label">
+                  <input type="radio" id="english" value="english" name="language"  />
+                  <label for="english" class="language-option-label">English</label>
+              </div>
+                   
+                <div id="flex-label">
+                    <input type="radio" id="yoruba" value="yoruba" name="language" />
+                    <label for="yoruba" class="language-option-label">Yoruba</label>
+                </div>
+                   
+                <div id="flex-label">
+                    <input type="radio" id="portugese" value="portugese" name="language" />
+                    <label for="portugese" class="language-option-label">Portugese</label>
+                </div>
+                <!-- <small>this field is required!</small> -->
+            </div>
+    
+        </div>
+        
+        <div class="options shadow flex-column">
+              <div class="save hide">Save form data</div>
+            <div class="retrieve hide">Retrieve form data</div>
+            <div class="menu flex"><i class="icon fa fa-plus" aria-hidden="true"></i></div>
+        </div>
+
+        <div class="submit-btn">
+           <button type="submit" >Submit</button>
+        </div>
+    </form>
+    
+
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
+
+
+        
