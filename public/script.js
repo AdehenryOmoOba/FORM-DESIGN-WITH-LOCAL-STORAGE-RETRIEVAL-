@@ -39,7 +39,6 @@ retrieve.addEventListener("click", () => {
     if (radioOption[i].value === storedData.language)
       radioOption[i].checked = true;
   }
-  logger(`Fetched data from local storage`);
 });
 
 function getFormData(event) {
